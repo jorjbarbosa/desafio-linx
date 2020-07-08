@@ -6,7 +6,7 @@ const { connectDatabase } = require('./config/database')
 app.use(express.json())
 app.use(cors())
 
-connectDatabase()
+// connectDatabase()
 
 app.use('/products', require('./routes/products'))
 
