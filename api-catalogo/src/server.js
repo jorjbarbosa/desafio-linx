@@ -19,7 +19,7 @@ app.use('/products', require('./routes/products'))
 
 app.use((req, res, next) => {
   res.status(404).json({
-    error: 'Endpoint not found teste'
+    error: 'Endpoint not found'
   })
   next()
 })
