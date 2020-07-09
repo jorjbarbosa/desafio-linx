@@ -1,0 +1,25 @@
+version: "3.7"
+
+services: 
+  catalogo:
+    container_name: catalogo
+    build: ./api-catalogo
+    command: npm start
+    ports: 
+      - 3000:3000
+    volumes: 
+      - .:/usr/app
+
+  recomendacoes:
+    container_name: recomendacoes
+    build: ./api-recomendacoes
+    command: npm start
+    ports: 
+      - 4000:4000
+    volumes: 
+      - .:/usr/app
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports: 
+      - "27017:27017"
