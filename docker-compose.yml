@@ -1,5 +1,4 @@
-version: "3.7"
-
+version: "3"
 services: 
   catalogo:
     container_name: catalogo
@@ -7,8 +6,11 @@ services:
     command: npm start
     ports: 
       - 3000:3000
+    working_dir: /usr/app
     volumes: 
-      - .:/usr/app
+      - ./api-catalogo:/usr/app
+    depends_on: 
+      - mongo
 
   recomendacoes:
     container_name: recomendacoes
@@ -16,10 +18,17 @@ services:
     command: npm start
     ports: 
       - 4000:4000
+    working_dir: /usr/app
     volumes: 
-      - .:/usr/app
+      - ./api-recomendacoes:/usr/app
+    depends_on: 
+      - catalogo
   mongo:
     container_name: mongo
     image: mongo
     ports: 
-      - "27017:27017"
+      - 27017:27017
+  mongo_seed:
+    build: ./mongo_seed
+    depends_on: 
+      - mongo

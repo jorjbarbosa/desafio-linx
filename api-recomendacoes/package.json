@@ -4,7 +4,7 @@
   "description": "API de recomendações para o desafio da Linx",
   "main": "server.js",
   "scripts": {
-    "start": "node src/server.js"
+    "start": "nodemon src/server.js"
   },
   "author": "Jorge Luis Abadias Barbosa",
   "license": "MIT",

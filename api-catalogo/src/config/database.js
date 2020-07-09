@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 module.exports = {
   async connectDatabase() {
     try {
-      await mongoose.createConnection('mongodb://localhost:27017/products', {
+      await mongoose.connect('mongodb://mongo:27017/catalog', {
         useNewUrlParser: true,
         useUnifiedTopology: true
       })
