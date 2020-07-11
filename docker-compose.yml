@@ -8,7 +8,8 @@ services:
       - 3000:3000
     working_dir: /usr/app
     volumes: 
-      - ./api-catalogo:/usr/app/api-catalogo
+      - ./api-catalogo:/usr/app/
+      - ./usr/app/node_modules
     depends_on: 
       - mongo
 
@@ -20,7 +21,8 @@ services:
       - 4000:4000
     working_dir: /usr/app
     volumes: 
-      - ./api-recomendacoes:/usr/app/api-recomendacoes
+      - ./api-recomendacoes:/usr/app/
+      - ./usr/app/node_modules
     depends_on: 
       - catalogo
   mongo:
