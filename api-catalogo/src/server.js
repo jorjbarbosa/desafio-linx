@@ -24,6 +24,6 @@ app.use((req, res, next) => {
   next()
 })
 
-app.listen(3000, '0.0.0.0', () => {
-  console.log('Server running on port 3000')
+app.listen(process.env.SERVER_PORT, process.env.SERVER_HOST, () => {
+  console.log(`Server running on port ${process.env.SERVER_PORT}`)
 })
