@@ -1,12 +1,13 @@
 const express = require('express')
 const cors = require('cors')
+// const errorHandler = require('../middlewares/error-handler')
 
 const app = express()
 
 app.use(cors())
 app.use(express.json())
 
-const {SERVER_HOST, SERVER_PORT} = process.env
+const { SERVER_HOST, SERVER_PORT } = process.env
 
 app.use('/recomendations', require('./routes/recomendations'))
 
