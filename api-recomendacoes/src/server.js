@@ -1,10 +1,15 @@
 const express = require('express')
+const cors = require('cors')
+
 const app = express()
 
-app.get('/', (req, res) => {
-  res.send('API de recomendações')
-})
+app.use(cors())
+app.use(express.json())
 
-app.listen(4000, '0.0.0.0', () => {
-  console.log('API de rocomendações Rodando')
+const {SERVER_HOST, SERVER_PORT} = process.env
+
+app.use('/recomendations', require('./routes/recomendations'))
+
+app.listen(SERVER_PORT, SERVER_HOST, () => {
+  console.log(`API de rocomendações Rodando na porta ${SERVER_PORT}`)
 })
