@@ -7,7 +7,7 @@ const getRecomendationList = async (route, type) => {
     const redisData = await client.get(type)
     if (!redisData) {
       const { data } = await axios.get(route)
-      await client.setex(type, 5000, JSON.stringify(data))
+      await client.setex(type, 10 * 60, JSON.stringify(data))
       return data
     }
     return JSON.parse(redisData)
