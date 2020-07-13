@@ -1,6 +1,8 @@
 const axios = require('axios')
 const redis = require('async-redis')
-const client = redis.createClient()
+const client = redis.createClient({
+  host: 'redis'
+})
 
 const getProductInfo = async (product) => {
   try {

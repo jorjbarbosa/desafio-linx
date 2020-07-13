@@ -4,7 +4,7 @@
   "description": "API de recomendações para o desafio da Linx",
   "main": "server.js",
   "scripts": {
-    "node": "node -r dotenv/config src/server.js",
+    "start": "node -r dotenv/config src/server.js",
     "dev": "nodemon -r dotenv/config src/server.js"
   },
   "author": "Jorge Luis Abadias Barbosa",
