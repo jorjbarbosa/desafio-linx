@@ -39,7 +39,7 @@ const truncateString = (str, num) => {
 }
 
 const formatarValor = (valor) => {
-  return valor.toString().toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+  return parseFloat(valor).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
 }
 
 const getDiscount = (oldValue, newValue) => {
